@@ -1,0 +1,595 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background: linear-gradient(to right, #b1c0e6, #d7b6f4);
+  height: 100vh;
+  margin: 0;
+}
+
+.navbar {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  position: relative;
+}
+
+
+/* Active link underlining */
+.nav-links .active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #5f52a4;
+}
+
+/* Hover effect */
+.nav-links a:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #5f52a4;
+}
+
+/* GitHub icon styling */
+.github-icon img {
+  width: 30px;
+  height: 30px;
+  filter: invert(100%);
+}
+
+/* hero section  */
+/* Estilos para el video en el hero */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#hero {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 0px;
+  color: #000000;
+  padding: 0rem 5.6rem;
+  margin-bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+
+
+.text-color-main {
+  color: #5f52a4;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.margin-hero {
+  margin-bottom: 3.2rem;
+}
+
+.hero-cta {
+  display: flex;
+}
+/* Estilo para el cursor */
+.cursor {
+  border-left: 2px solid black;
+  animation: blink 0.7s steps(1) infinite;
+  margin-left: 2px;
+}
+
+/* Animación de parpadeo */
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
+}
+
+/* ABOUT */
+
+.about-me {
+  background-color: #5f52a4;
+  padding: 50px;
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Center-align text for section */
+  height: 100%;
+  border-top: 0px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  padding-bottom: 10%;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 70px;
+}
+
+/* Container to align image and content side-by-side */
+.about-me-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.about-me-image img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-me-content {
+  max-width: 400px;
+  text-align: left; /* Left-align text for content */
+}
+
+.about-me-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Boton de about */
+.resume-button {
+  position: relative;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: white; /* Color del texto por defecto */
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid white;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+.resume-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f8f6; /* Fondo del efecto hover */
+  transition: left 0.4s ease-in-out;
+  z-index: 1; /* Debe estar debajo del texto */
+}
+
+.resume-button span {
+  position: relative;
+  z-index: 2; /* Aseguramos que el texto esté encima */
+  color: white; /* Color del texto normal */
+  transition: color 0.4s ease-in-out;
+}
+
+.resume-button:hover span {
+  color: #5f52a4 /* Cambia el color del texto a azul al hacer hover */
+}
+
+.resume-button:hover::before {
+  left: 0; /* Mueve el fondo al centro */
+}
+
+
+/* projects */
+
+.projects-title{
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.each-project{
+  margin-bottom: 50px;
+}
+
+.project-image img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: opacity 0.3s ease; /* Para el cambio de opacidad */
+}
+
+.project-image:hover img {
+  opacity: 0.8; /* Aclara la imagen */
+}
+
+.js-tilt {
+  max-width: 900px;
+  position: relative; /* Necesario para el efecto de brillo */
+  overflow: hidden; /* Evita que el brillo desborde */
+  display: flex; /* Añadido para centrar contenido */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  will-change: transform;
+  transition: transform 0.2s ease; /* Suaviza el movimiento de inclinación */
+  position: relative;
+  overflow: hidden; /* Evita que se vea fuera del contenedor */
+}
+
+.js-tilt-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.js-tilt-glare-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
+  transform: rotate(180deg) translate(-50%, -50%);
+  transform-origin: 0% 0%;
+  opacity: 0;
+  width: 200%; /* Ajusta según sea necesario */
+  height: 200%; /* Ajusta según sea necesario */
+}
+
+/* boton de proyectos */
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-link {
+  text-decoration: none;
+  position: relative;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: #5f52a4;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #5f52a4;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+.project-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #5f52a4;
+  transition: left 0.4s ease-in-out;
+  z-index: 1; /* Debe estar debajo del texto */
+}
+
+.project-link span {
+  position: relative;
+  z-index: 2; /* Aseguramos que el texto esté encima */
+  color: #5f52a4; /* Color del texto normal */
+  transition: color 0.4s ease-in-out;
+}
+
+.project-link:hover span {
+  color: white; /* Cambia el color del texto a azul al hacer hover */
+}
+
+.project-link:hover::before {
+  left: 0; /* Mueve el fondo al centro */
+}
+
+
+
+.link-code {
+  text-decoration: none;
+  position: relative;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: white;
+  background-color: #5f52a4;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+.link-code::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 2px solid #5f52a4;
+  transition: left 0.4s ease-in-out;
+  z-index: 1; /* Debe estar debajo del texto */
+}
+
+.link-code span {
+  position: relative;
+  z-index: 2; /* Aseguramos que el texto esté encima */
+  color: white; /* Color del texto normal */
+  transition: color 0.4s ease-in-out;
+}
+
+.link-code:hover span {
+  color: #5f52a4; /* Cambia el color del texto a azul al hacer hover */
+}
+
+.link-code:hover::before {
+  left: 0; /* Mueve el fondo al centro */
+}
+
+/* CONTACT */
+.contact-section {
+  -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background-color: #5f52a4;
+  color: white;
+  text-align: center;
+  padding: 40px 20px; /* Añadir padding interno para mejor ajuste */
+  margin-top: 100px;
+}
+
+.contact-section h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 30px; /* Separar título del formulario */
+}
+
+.contact-section p {
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+/* FORM */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* Asegura un ancho máximo para el formulario */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  background-color: #333;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+}
+
+.input-box > input,
+.input-box > textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  color: #fff;
+  transition: border-color 0.3s;
+}
+
+/* Placeholder color */
+.input-box > input::placeholder,
+.input-box > textarea::placeholder {
+  color: #a3a3a3;
+}
+
+/* Icono dentro del input */
+.input-box > i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.3s;
+}
+
+/* Botón de enviar */
+form > button {
+  width: 100%;
+  padding: 15px;
+  background: crimson;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+form > button:hover {
+  background: rgb(172, 16, 47);
+}
+
+
+/* FORM */
+/* Center the form container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  /* background-image: url('assets/img/ejemplo.png'); /* Cambia a la ruta de tu imagen */
+  /* background-size: cover; Hace que la imagen cubra toda el área */
+  /* background-position: center; Centra la imagen */
+  /* background-repeat: no-repeat; Evita que la imagen se repita */ */
+}
+
+/* Form box */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  background-color: #333; /* Fondo oscuro del formulario */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 400px; /* Ancho máximo */
+  width: 100%;
+}
+
+.box-info h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 80px;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+}
+
+.input-box > input,
+.input-box > textarea {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3); /* Color inicial del borde */
+  border-radius: 5px;
+  color: #fff;
+  transition: border-color 0.3s; /* Transición más suave */
+}
+
+/* Placeholder color */
+.input-box > input::placeholder,
+.input-box > textarea::placeholder {
+  color: #a3a3a3;
+}
+
+/* Borde rojo constante al hacer foco */
+.input-box > input:focus,
+.input-box > textarea:focus {
+  border-bottom: 3px solid #5f52a4; /* Mantiene el borde rojo constante */
+  outline: none;
+}
+
+/* Icono dentro del input */
+.input-box > i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.3s;
+}
+
+.input-box > input:focus ~ i,
+.input-box > textarea:focus ~ i {
+  color: #5f52a4;
+}
+
+/* Botón de enviar */
+form > button {
+  width: 100%;
+  padding: 12px;
+  background: crimson;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+form > button:hover {
+  background: rgb(172, 16, 47);
+}
+
+
+
+
+
+
+/* FOOTER */
+
+.footer-container{
+  background-color: rgb(36, 36, 36);
+  color: white;
+}
+
+.back-to-top{
+  color: white;
+}
+.back-to-top-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Ajusta el margen según prefieras */
+}
+
+/* Añadir separación entre los iconos de la lista */
+.icon-list li {
+  margin: 0 15px; /* Ajusta el valor para más o menos espacio */
+}
