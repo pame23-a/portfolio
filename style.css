@@ -8,7 +8,8 @@
 body {
   font-family: 'Arial', sans-serif;
   color: #333;
-  background: linear-gradient(to right, #b1c0e6, #d7b6f4);
+  background: linear-gradient(to right, #c9daf4, #dfc7ed); /* Degradado de fondo */
+  /* background: linear-gradient(to right, #b1c0e6, #d7b6f4); */
   height: 100vh;
   margin: 0;
 }
@@ -68,52 +69,67 @@ body {
   height: 30px;
   filter: invert(100%);
 }
-
-/* hero section  */
-/* Estilos para el video en el hero */
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
 #hero {
   position: relative;
   min-height: 100vh;
-  height: 100vh;
   display: flex;
   align-items: center;
-  border-bottom: 0px;
   color: #000000;
-  padding: 0rem 5.6rem;
-  margin-bottom: 0;
-  z-index: 1;
+  padding: 0 5.6rem;
   overflow: hidden;
 }
 
-
-
-.text-color-main {
-  color: #5f52a4;
+.container-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.hero-title {
-  font-size: 4rem;
-  font-weight: 700;
-  text-align: left;
+.hero-content {
+  flex: 1;
+  max-width: 50%;
 }
 
 .margin-hero {
   margin-bottom: 3.2rem;
+  font-size: 3rem; /* Tamaño de fuente reducido */
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.hero-description{
+  font-size: 2 rem;
+  margin-top: 40px;
+
 }
 
 .hero-cta {
   display: flex;
 }
+
+/* Estilos para la imagen */
+.hero-image {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Opcional: redondea los bordes */
+}
+
+.text-color-main {
+  color: #5f52a4;
+}
+
 /* Estilo para el cursor */
 .cursor {
   border-left: 2px solid black;
@@ -124,7 +140,7 @@ body {
 /* Animación de parpadeo */
 @keyframes blink {
   50% {
-      opacity: 0;
+    opacity: 0;
   }
 }
 
@@ -136,7 +152,7 @@ body {
   color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center; /* Center-align text for section */
+  text-align: center;
   height: 100%;
   border-top: 0px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
@@ -151,24 +167,39 @@ body {
   margin-bottom: 70px;
 }
 
-/* Container to align image and content side-by-side */
+/* Centralizar el contenedor principal */
 .about-me-container {
   display: flex;
-  align-items: center;
+  justify-content: center; /* Centra el contenedor en la sección */
+  gap: 20px;
+  max-width: 1000px; /* Limita el ancho total */
+  margin: 0 auto; /* Centra horizontalmente en la página */
+}
+
+/* Estilos para el contenedor del script */
+.about-me-script {
+  max-width: 300px;
+  display: flex;
   justify-content: center;
-  gap: 100px;
+  margin-right: -100px;
+  margin-top: -200px;
+
+
 }
 
 .about-me-image img {
   width: 250px;
   height: auto;
   border-radius: 10px;
+  margin-top: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .about-me-content {
-  max-width: 400px;
-  text-align: left; /* Left-align text for content */
+  max-width: 800px;
+  text-align: justify;
+  margin-left: 30px;
+
 }
 
 .about-me-content p {
@@ -182,7 +213,7 @@ body {
   position: relative;
   padding: 5px 10px;
   font-size: 18px;
-  color: white; /* Color del texto por defecto */
+  color: white;
   background-color: transparent;
   border-radius: 5px;
   border: 2px solid white;
@@ -198,25 +229,157 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background-color: #f4f8f6; /* Fondo del efecto hover */
+  background-color: #f4f8f6;
   transition: left 0.4s ease-in-out;
-  z-index: 1; /* Debe estar debajo del texto */
+  z-index: 1;
 }
 
 .resume-button span {
   position: relative;
-  z-index: 2; /* Aseguramos que el texto esté encima */
-  color: white; /* Color del texto normal */
+  z-index: 2;
+  color: white;
   transition: color 0.4s ease-in-out;
 }
 
 .resume-button:hover span {
-  color: #5f52a4 /* Cambia el color del texto a azul al hacer hover */
+  color: #5f52a4;
 }
 
 .resume-button:hover::before {
-  left: 0; /* Mueve el fondo al centro */
+  left: 0;
 }
+
+
+.arrow{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: -80px;
+}
+/* skills */
+/* Wrapper para centrar la sección de habilidades */
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+}
+
+.skills-container {
+  max-width: 800px;
+  padding: 20px;
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Alinea el contenido hacia la derecha */
+  margin: auto;
+}
+
+/* Título */
+.skills-title {
+  font-size: 2rem;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.skills-title::before {
+  content: "#skills";
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+
+.skills-title::after {
+  content: '';
+  flex-grow: 1;
+  height: 2px;
+  background-color: #5f52a4;
+  margin-left: 10px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem; /* Espacio entre el círculo de team y las cajas de skills */
+}
+
+/* circulo */
+@property --memberRotation {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: true;
+}
+* { box-sizing: border-box; margin: 0; padding: 0 }
+ul.team{
+  width: 40vmin;
+  list-style: none;
+
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  animation: memberRotation 10s linear infinite;
+
+  > li {
+    offset-path: border-box;
+    offset-distance: calc(100% / var(--member-count) * var(--member-idx) + (var(--memberRotation) * 100%));
+    width: calc(100% / (1 + (1 / sin(180deg / var(--member-count)))));
+    position: relative;
+    > img {
+      position: absolute;
+      width: 100%;
+      border: 3px solid #5f52a4;
+      scale: .8;
+
+    aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 50%;
+      rotate: calc(-360deg / var(--member-count) * var(--member-idx) - (360deg * var(--memberRotation)))
+    }
+  }
+  &:has(img:hover){
+    animation-play-state: paused
+  }
+}
+
+@keyframes memberRotation {
+  to { --memberRotation: 1 }
+}
+
+
+/* Diseño de las cajas de habilidades */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 20px;
+  justify-content: end;
+}
+
+.skill-box {
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco transparente */;
+  padding: 15px;
+  border: 4px dashed rgba(255, 255, 255, 0.4); /* Borde punteado */;
+  border-radius: 10px;
+}
+
+
+.skill-box h3 {
+  font-size: 1rem;
+  color: #5f52a4;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.skill-box p {
+  color: #5f52a4;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+
 
 
 /* projects */
@@ -370,206 +533,116 @@ body {
 }
 
 /* CONTACT */
+#contact-me {
+  display: flex;
+  justify-content: center; /* Centramos el contenedor dentro de su sección */
+  margin-top: 20px; /* Ajusta según el espaciado necesario */
+}
+
+
 .contact-section {
-  -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  background-color: #5f52a4;
-  color: white;
-  text-align: center;
-  padding: 40px 20px; /* Añadir padding interno para mejor ajuste */
-  margin-top: 100px;
-}
-
-.contact-section h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  margin-bottom: 30px; /* Separar título del formulario */
-}
-
-.contact-section p {
-  font-size: 1.2em;
-  margin: 20px 0;
-}
-
-/* FORM */
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 1200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px; /* Asegura un ancho máximo para el formulario */
+  margin-bottom: 50px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 15px;
-  background-color: #333;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  width: 100%;
-}
-
-.input-box {
-  position: relative;
-  width: 100%;
-}
-
-.input-box > input,
-.input-box > textarea {
-  width: 100%;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid transparent;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  color: #fff;
-  transition: border-color 0.3s;
-}
-
-/* Placeholder color */
-.input-box > input::placeholder,
-.input-box > textarea::placeholder {
-  color: #a3a3a3;
-}
-
-/* Icono dentro del input */
-.input-box > i {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 15px;
-  color: rgba(255, 255, 255, 0.3);
-  transition: color 0.3s;
-}
-
-/* Botón de enviar */
-form > button {
-  width: 100%;
-  padding: 15px;
-  background: crimson;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: 0.3s;
-}
-
-form > button:hover {
-  background: rgb(172, 16, 47);
-}
-
-
-/* FORM */
-/* Center the form container */
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-
-  /* background-image: url('assets/img/ejemplo.png'); /* Cambia a la ruta de tu imagen */
-  /* background-size: cover; Hace que la imagen cubra toda el área */
-  /* background-position: center; Centra la imagen */
-  /* background-repeat: no-repeat; Evita que la imagen se repita */ */
-}
-
-/* Form box */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 15px;
-  background-color: #333; /* Fondo oscuro del formulario */
+.contact-info {
+  flex: 1;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  max-width: 400px; /* Ancho máximo */
-  width: 100%;
 }
 
-.box-info h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 80px;
+/* Estilos para el título */
+.contact-info h2 {
+  color: #b985d6;
+  font-size: 28px;
+  margin-bottom: 15px;
 }
 
-.input-box {
-  position: relative;
-  width: 100%;
+/* Para organizar los elementos de contacto en dos columnas */
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px; /* Espacio entre los elementos */
 }
 
-.input-box > input,
-.input-box > textarea {
-  width: 100%;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid transparent;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.3); /* Color inicial del borde */
-  border-radius: 5px;
-  color: #fff;
-  transition: border-color 0.3s; /* Transición más suave */
+.contact-info p {
+  color: #555555;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  width: 45%; /* Ancho de cada columna */
 }
 
-/* Placeholder color */
-.input-box > input::placeholder,
-.input-box > textarea::placeholder {
-  color: #a3a3a3;
+.contact-info p i {
+  margin-right: 10px;
+  color: #b985d6;
 }
 
-/* Borde rojo constante al hacer foco */
-.input-box > input:focus,
-.input-box > textarea:focus {
-  border-bottom: 3px solid #5f52a4; /* Mantiene el borde rojo constante */
-  outline: none;
+/* Botones */
+.buttons {
+  display: flex;
+  gap: 50px;
+  margin-top: 20px;
 }
 
-/* Icono dentro del input */
-.input-box > i {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 15px;
-  color: rgba(255, 255, 255, 0.3);
-  transition: color 0.3s;
-}
-
-.input-box > input:focus ~ i,
-.input-box > textarea:focus ~ i {
-  color: #5f52a4;
-}
-
-/* Botón de enviar */
-form > button {
-  width: 100%;
-  padding: 12px;
-  background: crimson;
-  color: #fff;
+.btn {
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
-form > button:hover {
-  background: rgb(172, 16, 47);
+.resume-btn {
+  background: #b985d6;
+  color: white;
 }
 
+.resume-btn:hover {
+  background: #a06cbe;
+}
 
+.portfolio-btn {
+  background: #f7cad0;
+  color: white;
+}
 
+.portfolio-btn:hover {
+  background: #f5b0b8;
+}
 
+/* QR y botón de feedback */
+.qr-linkedin {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.qr-linkedin img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+/* Imagen de perfil */
+.profile-pic {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 
 /* FOOTER */
