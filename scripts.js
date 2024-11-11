@@ -48,7 +48,7 @@ window.onload = typeRole;
 // CV EN BOTON
 function viewResume() {
   // Cambia 'resume.pdf' por el enlace real a tu currículum
-  window.open('resume.pdf', '_blank');
+  window.open('assets/resume.pdf', '_blank');
 }
 
 
